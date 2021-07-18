@@ -223,6 +223,22 @@
 						"typeProperties": {
 							"waitTimeInSeconds": 15
 						}
+					},
+					{
+						"name": "Wait1",
+						"type": "Wait",
+						"dependsOn": [
+							{
+								"activity": "copy data from sa to sa",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 20
+						}
 					}
 				],
 				"annotations": [],
