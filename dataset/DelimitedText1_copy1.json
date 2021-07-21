@@ -2,15 +2,15 @@
 	"name": "DelimitedText1_copy1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "md_ls_AzureDataLakeStorage",
+			"referenceName": "md_ls_AzureBlobStorage",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
-				"fileSystem": "output"
+				"type": "AzureBlobStorageLocation",
+				"container": "output"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
