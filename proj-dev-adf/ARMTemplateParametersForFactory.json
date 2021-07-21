@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "proj-dev-adf"
 		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
 		"LS_AzureBlobStorage_properties_typeProperties_connectionString_secretName": {
 			"value": "dev-sa-access-sec"
 		},
