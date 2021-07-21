@@ -29,7 +29,7 @@
 				"container": "input"
 			},
 			"columnDelimiter": ",",
-			"compressionCodec": "ZipDeflate",
+			"compressionCodec": "deflate",
 			"escapeChar": "\\",
 			"quoteChar": "\""
 		},
