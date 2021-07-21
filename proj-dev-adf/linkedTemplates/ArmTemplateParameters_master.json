@@ -5,6 +5,12 @@
 		"factoryName": {
 			"value": "proj-dev-adf"
 		},
+		"md_ls_AzureBlobStorage_connectionString": {
+			"value": ""
+		},
+		"md_ls_AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"value": "dev-sa-access-sec"
 		},
@@ -13,6 +19,9 @@
 		},
 		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
 			"value": "https://proj-dev-kv.vault.azure.net/"
+		},
+		"md_ls_AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://testfilesfolders.dfs.core.windows.net"
 		},
 		"containerUri": {
 			"value": ""

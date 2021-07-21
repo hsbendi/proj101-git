@@ -7,6 +7,14 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "proj-dev-adf"
 		},
+		"md_ls_AzureBlobStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'md_ls_AzureBlobStorage'"
+		},
+		"md_ls_AzureDataLakeStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'md_ls_AzureDataLakeStorage'"
+		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
 			"defaultValue": "dev-sa-access-sec"
@@ -18,6 +26,10 @@
 		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://proj-dev-kv.vault.azure.net/"
+		},
+		"md_ls_AzureDataLakeStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://testfilesfolders.dfs.core.windows.net"
 		}
 	},
 	"variables": {
@@ -281,22 +293,18 @@
 													"source": {
 														"type": "DelimitedTextSource",
 														"storeSettings": {
-															"type": "AzureBlobStorageReadSettings",
+															"type": "AzureBlobFSReadSettings",
 															"recursive": true,
 															"enablePartitionDiscovery": false
 														},
 														"formatSettings": {
-															"type": "DelimitedTextReadSettings",
-															"compressionProperties": {
-																"type": "ZipDeflateReadSettings"
-															}
+															"type": "DelimitedTextReadSettings"
 														}
 													},
 													"sink": {
 														"type": "DelimitedTextSink",
 														"storeSettings": {
-															"type": "AzureBlobStorageWriteSettings",
-															"copyBehavior": "PreserveHierarchy"
+															"type": "AzureBlobFSWriteSettings"
 														},
 														"formatSettings": {
 															"type": "DelimitedTextWriteSettings",
@@ -438,7 +446,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage1",
+					"referenceName": "md_ls_AzureBlobStorage",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
@@ -455,7 +463,7 @@
 				"schema": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+				"[concat(variables('factoryId'), '/linkedServices/md_ls_AzureBlobStorage')]"
 			]
 		},
 		{
@@ -497,7 +505,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage1",
+					"referenceName": "md_ls_AzureBlobStorage",
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
@@ -518,13 +526,12 @@
 							"type": "Expression"
 						},
 						"folderPath": {
-							"value": "/@dataset().FolderName",
+							"value": "@dataset().FolderName",
 							"type": "Expression"
 						},
 						"container": "input"
 					},
 					"columnDelimiter": ",",
-					"compressionCodec": "deflate",
 					"escapeChar": "\\",
 					"quoteChar": "\""
 				},
@@ -541,7 +548,7 @@
 				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+				"[concat(variables('factoryId'), '/linkedServices/md_ls_AzureBlobStorage')]"
 			]
 		},
 		{
@@ -662,6 +669,36 @@
 				"type": "AzureKeyVault",
 				"typeProperties": {
 					"baseUrl": "[parameters('LS_AzureKeyVault_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/md_ls_AzureBlobStorage')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('md_ls_AzureBlobStorage_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/md_ls_AzureDataLakeStorage')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('md_ls_AzureDataLakeStorage_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('md_ls_AzureDataLakeStorage_accountKey')]"
+					}
 				}
 			},
 			"dependsOn": []
