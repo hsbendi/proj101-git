@@ -1,6 +1,5 @@
 {
 	"name": "LS_AzureBlobStorage",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureBlobStorage",
@@ -11,8 +10,10 @@
 					"referenceName": "LS_AzureKeyVault",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "dev-sa-access-sec"
+				"secretName": "dev-sa-access-sec",
+				"secretVersion": ""
 			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
