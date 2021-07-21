@@ -151,7 +151,7 @@
 										},
 										"inputs": [
 											{
-												"referenceName": "DelimitedText1_copy2",
+												"referenceName": "DelimitedText2",
 												"type": "DatasetReference",
 												"parameters": {
 													"FolderName": {
