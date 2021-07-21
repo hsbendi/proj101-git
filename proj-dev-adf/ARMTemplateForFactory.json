@@ -7,9 +7,9 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "proj-dev-adf"
 		},
-		"AzureBlobStorage1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "dev-sa-access-sec"
 		},
 		"LS_AzureBlobStorage_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
@@ -616,10 +616,19 @@
 				"annotations": [],
 				"type": "AzureBlobStorage",
 				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
+					"connectionString": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "LS_AzureKeyVault",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "[parameters('AzureBlobStorage1_properties_typeProperties_connectionString_secretName')]"
+					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_AzureKeyVault')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_AzureBlobStorage')]",
@@ -635,7 +644,8 @@
 							"referenceName": "LS_AzureKeyVault",
 							"type": "LinkedServiceReference"
 						},
-						"secretName": "[parameters('LS_AzureBlobStorage_properties_typeProperties_connectionString_secretName')]"
+						"secretName": "[parameters('LS_AzureBlobStorage_properties_typeProperties_connectionString_secretName')]",
+						"secretVersion": ""
 					}
 				}
 			},
