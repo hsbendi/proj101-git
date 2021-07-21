@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -125,17 +126,13 @@
 													"enablePartitionDiscovery": false
 												},
 												"formatSettings": {
-													"type": "DelimitedTextReadSettings",
-													"compressionProperties": {
-														"type": "ZipDeflateReadSettings"
-													}
+													"type": "DelimitedTextReadSettings"
 												}
 											},
 											"sink": {
 												"type": "DelimitedTextSink",
 												"storeSettings": {
-													"type": "AzureBlobStorageWriteSettings",
-													"copyBehavior": "PreserveHierarchy"
+													"type": "AzureBlobStorageWriteSettings"
 												},
 												"formatSettings": {
 													"type": "DelimitedTextWriteSettings",
