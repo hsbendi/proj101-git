@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "2015-summary.csv",
 				"container": "input"
 			},
 			"columnDelimiter": ",",
