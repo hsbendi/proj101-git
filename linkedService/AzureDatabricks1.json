@@ -4,9 +4,9 @@
 		"annotations": [],
 		"type": "AzureDatabricks",
 		"typeProperties": {
-			"domain": "https://adb-7807226152779080.0.azuredatabricks.net/",
+			"domain": "https://adb-7807226152779080.0.azuredatabricks.net",
 			"authentication": "MSI",
-			"workspaceResourceId": "/subscriptions/2204785c-8b7b-4ca5-b077-656b3c0996a1/resourceGroups/proj-dev-rg/providers/Microsoft.Databricks/workspaces/cluster01",
+			"workspaceResourceId": "/subscriptions/2204785c-8b7b-4ca5-b077-656b3c0996a1/resourceGroups/rg-sundar/providers/Microsoft.Databricks/workspaces/sundarbricks",
 			"existingClusterId": "0726-132922-guano977"
 		}
 	}
