@@ -182,8 +182,8 @@
 		],
 		"parameters": {
 			"folderName": {
-				"type": "float",
-				"defaultValue": 0.2
+				"type": "string",
+				"defaultValue": "0.2"
 			}
 		},
 		"variables": {
