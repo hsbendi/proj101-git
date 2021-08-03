@@ -31,10 +31,6 @@
 			"type": "string",
 			"defaultValue": "https://testfilesfolders.dfs.core.windows.net"
 		},
-		"trigger1_properties_pipeline2_parameters_folderName": {
-			"type": "string",
-			"defaultValue": "0.2"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -79,9 +75,6 @@
 					},
 					"LS_AzureBlobStorage_properties_typeProperties_connectionString_secretName": {
 						"value": "[parameters('LS_AzureBlobStorage_properties_typeProperties_connectionString_secretName')]"
-					},
-					"trigger1_properties_pipeline2_parameters_folderName": {
-						"value": "[parameters('trigger1_properties_pipeline2_parameters_folderName')]"
 					}
 				}
 			},
