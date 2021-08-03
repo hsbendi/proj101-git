@@ -30,12 +30,32 @@
 		"LS_AzureBlobStorage_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
 			"defaultValue": "dev-sa-access-sec"
+		},
+		"trigger1_properties_pipeline2_parameters_folderName": {
+			"type": "int",
+			"defaultValue": 0.2
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureDatabricks1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "https://adb-7807226152779080.0.azuredatabricks.net",
+					"authentication": "MSI",
+					"workspaceResourceId": "/subscriptions/2204785c-8b7b-4ca5-b077-656b3c0996a1/resourceGroups/rg-sundar/providers/Microsoft.Databricks/workspaces/sundarbricks",
+					"existingClusterId": "0726-132922-guano977"
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_AzureKeyVault')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -75,22 +95,6 @@
 						"type": "SecureString",
 						"value": "[parameters('md_ls_AzureDataLakeStorage_accountKey')]"
 					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureDatabricks1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureDatabricks",
-				"typeProperties": {
-					"domain": "https://adb-7807226152779080.0.azuredatabricks.net",
-					"authentication": "MSI",
-					"workspaceResourceId": "/subscriptions/2204785c-8b7b-4ca5-b077-656b3c0996a1/resourceGroups/rg-sundar/providers/Microsoft.Databricks/workspaces/sundarbricks",
-					"existingClusterId": "0726-132922-guano977"
 				}
 			},
 			"dependsOn": []
@@ -659,7 +663,8 @@
 				],
 				"parameters": {
 					"folderName": {
-						"type": "array"
+						"type": "float",
+						"defaultValue": 0.2
 					}
 				},
 				"variables": {
@@ -717,6 +722,38 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pipeline2",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"folderName": "[parameters('trigger1_properties_pipeline2_parameters_folderName')]"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 15,
+						"startTime": "2021-08-03T13:36:00Z",
+						"timeZone": "UTC"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pipeline2')]"
 			]
 		}
 	]

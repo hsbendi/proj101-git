@@ -22,6 +22,9 @@
 		},
 		"md_ls_AzureDataLakeStorage_properties_typeProperties_url": {
 			"value": "https://testfilesfolders.dfs.core.windows.net"
+		},
+		"trigger1_properties_pipeline2_parameters_folderName": {
+			"value": 0.2
 		}
 	}
 }
