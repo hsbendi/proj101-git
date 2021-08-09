@@ -5,7 +5,7 @@
 		"annotations": [],
 		"type": "AmazonS3",
 		"typeProperties": {
-			"serviceUrl": "https://azureblobtest.s3.us-east-2.amazonaws.com",
+			"serviceUrl": "https://s3.us-east-2.amazonaws.com/azureblobtest/",
 			"accessKeyId": "AKIASD7BWL2MF4C2WHP4",
 			"authenticationType": "AccessKey",
 			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlBST0otREVWLUFERl83Y2NhMDNhYi1jM2QwLTQ3ZWUtOTA2Ny0zODgzOWNlNTBlMDEiDQp9"
