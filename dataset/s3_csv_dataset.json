@@ -9,7 +9,10 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AmazonS3Location"
+				"type": "AmazonS3Location",
+				"bucketName": "azureblobtest",
+				"folderPath": "testfilescsv",
+				"fileName": "2015-summary.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
