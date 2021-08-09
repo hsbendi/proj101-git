@@ -10,9 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AmazonS3Location",
-				"bucketName": "azureblobtest",
-				"folderPath": "testfilescsv",
-				"fileName": "2015-summary.csv"
+				"bucketName": "azureblobtest"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
