@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "proj-dev-adf"
 		},
+		"LS_AmazonS3_secretAccessKey": {
+			"value": ""
+		},
 		"md_ls_AzureBlobStorage_connectionString": {
 			"value": ""
 		},
@@ -13,6 +16,9 @@
 		},
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"value": "dev-sa-access-sec"
+		},
+		"LS_AmazonS3_properties_typeProperties_accessKeyId": {
+			"value": "AKIASD7BWL2MF4C2WHP4"
 		},
 		"LS_AzureBlobStorage_properties_typeProperties_connectionString_secretName": {
 			"value": "dev-sa-access-sec"
