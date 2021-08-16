@@ -1,0 +1,20 @@
+{
+	"name": "ls_akv",
+	"properties": {
+		"type": "AzureBlobFS",
+		"annotations": [],
+		"typeProperties": {
+			"url": "https://privateendpointsg.dfs.core.windows.net/",
+			"type": "AzureKeyVaultSecret",
+			"store": {
+				"referenceName": "AzureKeyVault1",
+				"type": "LinkedServiceReference"
+			},
+			"secretName": "privatekey"
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
