@@ -1,7 +1,0 @@
-{
-	"name": "AzureSqlDatabase1",
-	"properties": {
-		"privateLinkResourceId": "/subscriptions/2204785c-8b7b-4ca5-b077-656b3c0996a1/resourceGroups/synapseworkspace-managedrg-9a4f0f06-e7bf-409e-9ab6-b36439db7569/providers/Microsoft.Sql/servers/sundarsynapse",
-		"groupId": "sqlServer"
-	}
-}
