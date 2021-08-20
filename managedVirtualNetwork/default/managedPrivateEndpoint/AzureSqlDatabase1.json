@@ -1,7 +1,0 @@
-{
-	"name": "AzureSqlDatabase1",
-	"properties": {
-		"privateLinkResourceId": "/subscriptions/2204785c-8b7b-4ca5-b077-656b3c0996a1/resourceGroups/proj-dev-rg/providers/Microsoft.Sql/servers/sqldbserver9441",
-		"groupId": "sqlServer"
-	}
-}
