@@ -17,6 +17,9 @@
 		"AzureBlobStorage1_properties_typeProperties_connectionString_secretName": {
 			"value": "dev-sa-access-sec"
 		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://proj-dev-kv.vault.azure.net/"
+		},
 		"LS_AmazonS3_properties_typeProperties_accessKeyId": {
 			"value": "AKIASD7BWL2MF4C2WHP4"
 		},
@@ -26,8 +29,23 @@
 		"LS_AzureKeyVault_properties_typeProperties_baseUrl": {
 			"value": "https://proj-dev-kv.vault.azure.net/"
 		},
+		"ls_akv_properties_typeProperties_url": {
+			"value": "https://privateendpointsg.dfs.core.windows.net/"
+		},
 		"md_ls_AzureDataLakeStorage_properties_typeProperties_url": {
 			"value": "https://testfilesfolders.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage1_properties_privateLinkResourceId": {
+			"value": "/subscriptions/2204785c-8b7b-4ca5-b077-656b3c0996a1/resourceGroups/proj-dev-rg/providers/Microsoft.Storage/storageAccounts/projedevsa"
+		},
+		"AzureDataLakeStorage1_properties_groupId": {
+			"value": "dfs"
+		},
+		"AzureSqlDatabase1_properties_privateLinkResourceId": {
+			"value": "/subscriptions/2204785c-8b7b-4ca5-b077-656b3c0996a1/resourceGroups/proj-dev-rg/providers/Microsoft.Sql/servers/sqldbserver9441"
+		},
+		"AzureSqlDatabase1_properties_groupId": {
+			"value": "sqlServer"
 		},
 		"containerUri": {
 			"value": ""
