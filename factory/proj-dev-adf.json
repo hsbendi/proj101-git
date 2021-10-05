@@ -1,5 +1,13 @@
 {
 	"name": "proj-dev-adf",
+	"properties": {
+		"globalParameters": {
+			"KeyVaultBaseURL": {
+				"type": "string",
+				"value": "https://proj-dev-kv.vault.azure.net/"
+			}
+		}
+	},
 	"location": "centralus",
 	"identity": {
 		"type": "SystemAssigned",
