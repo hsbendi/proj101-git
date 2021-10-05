@@ -18,7 +18,7 @@
 					"source": {
 						"type": "DelimitedTextSource",
 						"storeSettings": {
-							"type": "AmazonS3ReadSettings",
+							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
@@ -49,18 +49,29 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "s3_csv_dataset",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "sd_output",
-						"type": "DatasetReference"
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference",
+						"parameters": {
+							"KeyVaultBaseURL": {
+								"value": "@pipeline().globalParameters.KeyVaultBaseURL",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"KeyVaultBaseURL": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
