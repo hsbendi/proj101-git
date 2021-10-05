@@ -6,10 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"FolderName": {
-				"type": "string"
-			},
-			"FileName": {
+			"KeyVaultBaseURL": {
 				"type": "string"
 			}
 		},
