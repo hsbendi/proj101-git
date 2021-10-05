@@ -10,7 +10,8 @@
 					"referenceName": "LS_AzureKeyVault",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "dev-sa-access-sec"
+				"secretName": "dev-sa-access-sec",
+				"secretVersion": ""
 			}
 		}
 	},
