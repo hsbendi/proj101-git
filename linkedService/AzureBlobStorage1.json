@@ -16,7 +16,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"secretName": "dev-sa-access-sec",
-				"secretVersion": "sundarst"
+				"secretVersion": ""
 			}
 		}
 	},
