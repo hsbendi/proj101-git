@@ -1,6 +1,11 @@
 {
 	"name": "AzureBlobStorage1",
 	"properties": {
+		"parameters": {
+			"KeyVaultBaseURL": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
@@ -11,7 +16,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"secretName": "dev-sa-access-sec",
-				"secretVersion": ""
+				"secretVersion": "sundarst"
 			}
 		}
 	},
