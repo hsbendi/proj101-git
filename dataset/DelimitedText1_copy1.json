@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "model.cdm.json",
 				"folderPath": "lead",
 				"container": "input"
 			},
