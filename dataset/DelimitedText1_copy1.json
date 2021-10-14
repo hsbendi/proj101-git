@@ -10,9 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "2021",
-				"folderPath": "lead",
-				"container": "input"
+				"folderPath": "Lead",
+				"container": "egldyn3"
 			},
 			"columnDelimiter": ",",
 			"rowDelimiter": "\n",
