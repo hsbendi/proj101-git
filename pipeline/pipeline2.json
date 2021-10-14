@@ -153,17 +153,7 @@
 										"inputs": [
 											{
 												"referenceName": "DelimitedText2",
-												"type": "DatasetReference",
-												"parameters": {
-													"FolderName": {
-														"value": "@pipeline().parameters.folderName",
-														"type": "Expression"
-													},
-													"FileName": {
-														"value": "@variables('fileName')",
-														"type": "Expression"
-													}
-												}
+												"type": "DatasetReference"
 											}
 										],
 										"outputs": [
