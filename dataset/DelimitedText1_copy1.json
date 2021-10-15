@@ -13,6 +13,7 @@
 				"container": "input"
 			},
 			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
 			"escapeChar": "\\",
 			"quoteChar": "\""
 		},
