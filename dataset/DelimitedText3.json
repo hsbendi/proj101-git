@@ -13,7 +13,6 @@
 				"fileSystem": "output"
 			},
 			"columnDelimiter": ",",
-			"rowDelimiter": "",
 			"escapeChar": "\\",
 			"quoteChar": "\""
 		},
