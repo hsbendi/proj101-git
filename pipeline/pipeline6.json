@@ -16,14 +16,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
+						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+							"type": "JsonReadSettings"
 						}
 					},
 					"sink": {
@@ -33,7 +33,7 @@
 						},
 						"formatSettings": {
 							"type": "JsonWriteSettings",
-							"filePattern": "arrayOfObjects"
+							"filePattern": "setOfObjects"
 						}
 					},
 					"enableStaging": false,
@@ -42,279 +42,7 @@
 						"mappings": [
 							{
 								"source": {
-									"ordinal": 1
-								},
-								"sink": {
-									"path": "$['id']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 2
-								},
-								"sink": {
-									"path": "$['name']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 3
-								},
-								"sink": {
-									"path": "$['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 4
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['name']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 5
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 6
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['dependsOn'][0]"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 7
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['policy']['timeout']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 8
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['policy']['retry']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 9
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['policy']['retryIntervalInSeconds']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 10
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['policy']['secureOutput']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 11
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['policy']['secureInput']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 12
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['userProperties'][0]"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 13
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['typeProperties']['url']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 14
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['typeProperties']['method']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 15
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['typeProperties']['headers']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 16
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['typeProperties']['authentication']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 17
-								},
-								"sink": {
-									"path": "$['properties']['activities'][0]['typeProperties']['authentication']['resource']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 18
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['ingestionStart']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 19
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['ingestionEnd']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 20
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['catalogBatchId']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 21
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['sasToken']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 22
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['imsOrgId']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 23
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['connectionId']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 24
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['connectionType']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 25
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['datasetId']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 26
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['entityReferenceId']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 27
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['connectorsRequestId']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 28
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['modifiedDatetimeStart']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 29
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['modifiedDatetimeEnd']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 30
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['sandboxId']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 31
-								},
-								"sink": {
-									"path": "$['properties']['parameters']['sandboxName']['type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 32
-								},
-								"sink": {
-									"path": "$['properties']['concurrency']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 33
-								},
-								"sink": {
-									"path": "$['properties']['lastPublishTime']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 34
-								},
-								"sink": {
-									"path": "$['etag']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 35
+									"path": "$['firstName']"
 								},
 								"sink": {
 									"path": "$['firstName']"
@@ -322,7 +50,7 @@
 							},
 							{
 								"source": {
-									"ordinal": 36
+									"path": "$['lastName']"
 								},
 								"sink": {
 									"path": "$['lastName']"
@@ -330,7 +58,7 @@
 							},
 							{
 								"source": {
-									"ordinal": 37
+									"path": "$['gender']"
 								},
 								"sink": {
 									"path": "$['gender']"
@@ -338,7 +66,7 @@
 							},
 							{
 								"source": {
-									"ordinal": 38
+									"path": "$['age']"
 								},
 								"sink": {
 									"path": "$['age']"
@@ -346,7 +74,7 @@
 							},
 							{
 								"source": {
-									"ordinal": 39
+									"path": "$['address']['streetAddress']"
 								},
 								"sink": {
 									"path": "$['address']['streetAddress']"
@@ -354,7 +82,7 @@
 							},
 							{
 								"source": {
-									"ordinal": 40
+									"path": "$['address']['city']"
 								},
 								"sink": {
 									"path": "$['address']['city']"
@@ -362,7 +90,7 @@
 							},
 							{
 								"source": {
-									"ordinal": 41
+									"path": "$['address']['state']"
 								},
 								"sink": {
 									"path": "$['address']['state']"
@@ -370,7 +98,7 @@
 							},
 							{
 								"source": {
-									"ordinal": 42
+									"path": "$['phoneNumbers'][0]['type']"
 								},
 								"sink": {
 									"path": "$['phoneNumbers'][0]['type']"
@@ -378,202 +106,19 @@
 							},
 							{
 								"source": {
-									"ordinal": 43
+									"path": "$['phoneNumbers'][0]['number']"
 								},
 								"sink": {
 									"path": "$['phoneNumbers'][0]['number']"
 								}
-							},
-							{
-								"source": {
-									"ordinal": 44
-								},
-								"sink": {
-									"path": "$['description']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 45
-								},
-								"sink": {
-									"path": "$['version']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 46
-								},
-								"sink": {
-									"path": "$['entities'][0]['$type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 47
-								},
-								"sink": {
-									"path": "$['entities'][0]['name']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 48
-								},
-								"sink": {
-									"path": "$['entities'][0]['description']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 49
-								},
-								"sink": {
-									"path": "$['entities'][0]['annotations'][0]['name']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 50
-								},
-								"sink": {
-									"path": "$['entities'][0]['annotations'][0]['value']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 51
-								},
-								"sink": {
-									"path": "$['entities'][0]['attributes'][0]['name']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 52
-								},
-								"sink": {
-									"path": "$['entities'][0]['attributes'][0]['dataType']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 53
-								},
-								"sink": {
-									"path": "$['entities'][0]['attributes'][0]['maxLength']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 54
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['name']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 55
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['location']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 56
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['cdm:traits'][0]['traitReference']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 57
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['cdm:traits'][0]['arguments'][0]['name']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 58
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['cdm:traits'][0]['arguments'][0]['value']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 59
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['$type']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 60
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['columnHeaders']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 61
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['delimiter']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 62
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['quoteStyle']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 63
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['csvStyle']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 64
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['encoding']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 65
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['annotations'][0]['name']"
-								}
-							},
-							{
-								"source": {
-									"ordinal": 66
-								},
-								"sink": {
-									"path": "$['entities'][0]['partitions'][0]['annotations'][0]['value']"
-								}
 							}
-						]
+						],
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText4",
+						"referenceName": "Json2",
 						"type": "DatasetReference"
 					}
 				],
