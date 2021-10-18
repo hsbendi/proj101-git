@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "input"
+				"fileName": "sample2 (1).json",
+				"container": "data"
 			},
 			"columnDelimiter": ",",
 			"rowDelimiter": "\n",
