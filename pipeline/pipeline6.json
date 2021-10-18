@@ -98,7 +98,7 @@
 							},
 							{
 								"source": {
-									"path": "['type']"
+									"path": "$['phoneNumbers'][0]['type']"
 								},
 								"sink": {
 									"path": "$['phoneNumbers'][0]['type']"
@@ -106,14 +106,14 @@
 							},
 							{
 								"source": {
-									"path": "['number']"
+									"path": "$['phoneNumbers'][0]['number']"
 								},
 								"sink": {
 									"path": "$['phoneNumbers'][0]['number']"
 								}
 							}
 						],
-						"collectionReference": "$['phoneNumbers']"
+						"collectionReference": ""
 					}
 				},
 				"inputs": [
