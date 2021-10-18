@@ -12,6 +12,385 @@
 				"type": "AzureBlobFSLocation"
 			}
 		},
-		"schema": {}
+		"schema": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"type": {
+					"type": "string"
+				},
+				"properties": {
+					"type": "object",
+					"properties": {
+						"activities": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"type": {
+										"type": "string"
+									},
+									"dependsOn": {
+										"type": "array"
+									},
+									"policy": {
+										"type": "object",
+										"properties": {
+											"timeout": {
+												"type": "string"
+											},
+											"retry": {
+												"type": "integer"
+											},
+											"retryIntervalInSeconds": {
+												"type": "integer"
+											},
+											"secureOutput": {
+												"type": "boolean"
+											},
+											"secureInput": {
+												"type": "boolean"
+											}
+										}
+									},
+									"userProperties": {
+										"type": "array"
+									},
+									"typeProperties": {
+										"type": "object",
+										"properties": {
+											"url": {
+												"type": "string"
+											},
+											"method": {
+												"type": "string"
+											},
+											"headers": {
+												"type": "object"
+											},
+											"authentication": {
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string"
+													},
+													"resource": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						"parameters": {
+							"type": "object",
+							"properties": {
+								"ingestionStart": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"ingestionEnd": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"catalogBatchId": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"sasToken": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"imsOrgId": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"connectionId": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"connectionType": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"datasetId": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"entityReferenceId": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"connectorsRequestId": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"modifiedDatetimeStart": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"modifiedDatetimeEnd": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"sandboxId": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								},
+								"sandboxName": {
+									"type": "object",
+									"properties": {
+										"type": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"concurrency": {
+							"type": "integer"
+						},
+						"lastPublishTime": {
+							"type": "string"
+						}
+					}
+				},
+				"etag": {
+					"type": "string"
+				},
+				"firstName": {
+					"type": "string"
+				},
+				"lastName": {
+					"type": "string"
+				},
+				"gender": {
+					"type": "string"
+				},
+				"age": {
+					"type": "integer"
+				},
+				"address": {
+					"type": "object",
+					"properties": {
+						"streetAddress": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"state": {
+							"type": "string"
+						}
+					}
+				},
+				"phoneNumbers": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"type": {
+								"type": "string"
+							},
+							"number": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"description": {
+					"type": "string"
+				},
+				"version": {
+					"type": "string"
+				},
+				"entities": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"$type": {
+								"type": "string"
+							},
+							"name": {
+								"type": "string"
+							},
+							"description": {
+								"type": "string"
+							},
+							"annotations": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"value": {
+											"type": "string"
+										}
+									}
+								}
+							},
+							"attributes": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"dataType": {
+											"type": "string"
+										},
+										"maxLength": {
+											"type": "integer"
+										}
+									}
+								}
+							},
+							"partitions": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"name": {
+											"type": "string"
+										},
+										"location": {
+											"type": "string"
+										},
+										"cdm:traits": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"traitReference": {
+														"type": "string"
+													},
+													"arguments": {
+														"type": "array",
+														"items": {
+															"type": "object",
+															"properties": {
+																"name": {
+																	"type": "string"
+																},
+																"value": {
+																	"type": "string"
+																}
+															}
+														}
+													}
+												}
+											}
+										},
+										"fileFormatSettings": {
+											"type": "object",
+											"properties": {
+												"$type": {
+													"type": "string"
+												},
+												"columnHeaders": {
+													"type": "boolean"
+												},
+												"delimiter": {
+													"type": "string"
+												},
+												"quoteStyle": {
+													"type": "string"
+												},
+												"csvStyle": {
+													"type": "string"
+												},
+												"encoding": {
+													"type": "string"
+												}
+											}
+										},
+										"annotations": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"name": {
+														"type": "string"
+													},
+													"value": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
