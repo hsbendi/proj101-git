@@ -41,74 +41,157 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['firstName']"
-								},
-								"sink": {
-									"path": "$['firstName']"
+									"path": "$['source_system']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['lastName']"
-								},
-								"sink": {
-									"path": "$['lastName']"
+									"path": "$['file_name']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['gender']"
-								},
-								"sink": {
-									"path": "$['gender']"
+									"path": "$['snapshot_date']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['age']"
-								},
-								"sink": {
-									"path": "$['age']"
+									"path": "$['snapshot_date_time']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['address']['streetAddress']"
-								},
-								"sink": {
-									"path": "$['address']['streetAddress']"
+									"path": "$['metadata_file_location']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['address']['city']"
-								},
-								"sink": {
-									"path": "$['address']['city']"
+									"path": "$['orc_formatted_file_location']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['address']['state']"
-								},
-								"sink": {
-									"path": "$['address']['state']"
+									"path": "$['metadata_file_name']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['phoneNumbers'][0]['type']"
-								},
-								"sink": {
-									"path": "$['phoneNumbers'][0]['type']"
+									"path": "$['name']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['phoneNumbers'][0]['number']"
-								},
-								"sink": {
-									"path": "$['phoneNumbers'][0]['number']"
+									"path": "$['description']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['version']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['$type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['description']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['annotations'][0]['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['annotations'][0]['value']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['attributes'][0]['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['attributes'][0]['dataType']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['attributes'][0]['maxLength']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['location']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['cdm:traits'][0]['traitReference']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['cdm:traits'][0]['arguments'][0]['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['cdm:traits'][0]['arguments'][0]['value']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['$type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['columnHeaders']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['delimiter']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['quoteStyle']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['csvStyle']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['fileFormatSettings']['encoding']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['annotations'][0]['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['entities'][0]['partitions'][0]['annotations'][0]['value']"
 								}
 							}
 						],
